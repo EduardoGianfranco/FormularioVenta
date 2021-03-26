@@ -20,10 +20,15 @@ namespace appventas.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Message"] = "";
             return View();
         }
-                public IActionResult Create()
+[HttpPost]
+        public IActionResult Create(Producto objProducto)
         {
+            Double total = 0.0;
+            total = (objProducto.Precio * objProducto.Cantidad) * 1.18;
+            ViewData["Message"] = "El total es: " + total + "S/. (Incluye IGV)";
             return View("Index");
         }
     }
