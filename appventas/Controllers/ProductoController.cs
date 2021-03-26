@@ -28,7 +28,7 @@ namespace appventas.Controllers
         {
             Double total = 0.0;
             total = (objProducto.Precio * objProducto.Cantidad) * 1.18;
-            ViewData["Message"] = "El total es: " + total + "S/. (Incluye IGV)";
+            ViewData["Message"] = "El total es: S/." + total + " (Incluye IGV)";
             return View("Index");
         }
     }
